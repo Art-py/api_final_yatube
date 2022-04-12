@@ -32,6 +32,9 @@ class Post(models.Model):
         related_name="posts", blank=True, null=True
     )
 
+    class Meta:
+        ordering = ('pub_date', 'text', )
+
     def __str__(self):
         return self.text[:CHAR_CUT]
 
